@@ -1,9 +1,4 @@
 -- Queries used in the course 
---------------------------------------------------------------------------------------------
-
-select * 
-from SensorLocations
-order by population desc
 
 --------------------------------------------------------------------------------------------
 
@@ -21,6 +16,34 @@ create table IncrementalWatermarks(
    TableName varchar(50) not null primary key,
    LastInsertedId int not null
 )
+
+
+create table SensorLocations(
+id INT not null primary key,
+City varchar(100) not null default 'UNKNOWN',
+Country varchar(100) not null default 'UNKNOWN',
+Population int not null default 0,
+Latitude decimal(9,6) not null default 0.0,
+Longitude decimal(9,6) not null default 0.0
+)
+
+--------------------------------------------------------------------------------------------
+
+
+create table SensorLocations(
+   id INT not null primary key,
+   City varchar(100) not null default 'UNKNOWN',
+   Country varchar(100) not null default 'UNKNOWN',
+   Population int not null default 0,
+   Latitude decimal(9,6) not null default 0.0,
+   Longitude decimal(9,6) not null default 0.0
+)
+
+--------------------------------------------------------------------------------------------
+
+select * 
+from SensorLocations
+order by population desc
 
 --------------------------------------------------------------------------------------------
 
